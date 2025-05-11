@@ -7,12 +7,12 @@
     <!-- 載入Bootstrap5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <!-- 匯入index.css -->
-    <link rel= "stylesheet" href= "index.css"/>
+    <link rel= "stylesheet" href="index.css"/>
 </head>
 <body>
     <div class="navbar">
         <div id="nav-left">
-            <a href="#about">吳承諺's Profile</a>
+            <a id="profile">吳承諺's Profile</a>
         </div>
         <div>
             <a href="#about">About Me</a>
@@ -25,9 +25,11 @@
     
     <div class="container">
         <div class="box">
-            <div class="about" id="about">
-                <img src="picture/profile.jpg" alt="個人大頭照">
-                <div>
+            <div class="row about" id="about">
+                <div class="col-12 col-md-3">
+                  <img src="picture/profile.jpg" alt="個人大頭照">
+                </div>
+                <div class="col-12 col-md-9" style="padding-left: 30px;">
                     <h1>吳承諺</h1>
                     <p>&nbsp;<i class="fa-solid fa-graduation-cap"></i> 學歷：國立臺北科技大學 | 資訊與財金管理系 | 大三</p>
                     <p>&nbsp;<i class="fa-solid fa-cake-candles"></i> &nbsp;生日：2004/06/22</p>
@@ -39,7 +41,7 @@
         <div class="box" id="skills">
             <h2>技能</h2>
             <ul>
-                <li>Python 網頁爬蟲</li>
+                <li>Python & 網頁爬蟲</li>
                 <li>機器學習</li>
                 <li>AI 相關應用</li>
                 <li>SQL 基本技能</li>
@@ -49,8 +51,8 @@
 
         <div class="box">
             <h2>證照</h2>
-            <section id="certificate">
-                <div style="width:50% auto">
+            <section id="certificate" class="row">
+                <div class="col-12 col-md-6">
                     <ul>
                         <li class="important">資訊證照</li>
                         <ul>
@@ -61,7 +63,7 @@
                         </ul>
                     </ul>
                 </div>
-                <div style="width:auto">
+                <div class="col-12 col-md-6">
                     <ul>
                         <li class="important">金融證照</li>
                         <ul>
@@ -74,22 +76,25 @@
                 </div>
             </section>
         </div>
-
+        
         <div class="box" id="experience">
-            <div class="left-side">
-                <h2>比賽經歷</h2>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <h2>比賽經歷</h2>
                 <ul>
                     <li>2023 北商四校程式競賽 - 第一名</li>
                     <li>2024 北商七校程式競賽 - 表現卓越獎</li>
                     <li>2025 潛力種子盃 - 初賽</li>
                     <li>2025 TSMC IT CareerHack 黑客松 - 初賽</li>
+                    <li>2025 AI金融創新黑客松 - 第二名</li>
                 </ul>
             </div>
-            <div id="carouselExampleCaptions" class="carousel slide right-side" data-bs-ride="carousel">
+            <div id="carouselExampleCaptions" class="col-12 col-md-8 carousel slide right-side" data-bs-ride="carousel">
                 <div class="carousel-indicators">
                   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
                   <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
                 </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active">
@@ -110,6 +115,12 @@
                       <h5>潛力種子盃 - 參賽證明</h5>
                     </div>
                   </div>
+                  <div class="carousel-item">
+                    <img src="picture/2025Hack.JPEG" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                      <h5>2025 AI金融創新黑客松 - 第二名</h5>
+                    </div>
+                  </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -120,6 +131,7 @@
                   <span class="visually-hidden">Next</span>
                 </button>
               </div>
+          </div>
         </div>
 
         <div class="box" id="experience">
@@ -169,5 +181,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/04612a7646.js" crossorigin="anonymous"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $('#profile').click(function(){
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+      });
+    </script>
 </body>
 </html>
